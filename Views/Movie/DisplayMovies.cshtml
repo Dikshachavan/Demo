@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Diksha.Models.Movie>
+@{
+    ViewBag.Title = "DisplayMovies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+&times;
+<h2>Movies</h2>
+@if (Model.Count() == 0)
+{
+    <p>No Records Found</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Movie</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var MoviesList in Model)
+            {
+                <tr>
+                    <td>@MoviesList.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
